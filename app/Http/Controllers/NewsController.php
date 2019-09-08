@@ -11,13 +11,6 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         $ports = News::all()->sortByDesc('updated_at');
-
-        if (count($ports) > 0) {
-            $headline = $ports->shift();
-        } else {
-            $headline = null;
-        }
-        return view('news.index', ['headline' => $headline,
-        'posts' => $ports]);
+        return view('news.index', ['posts' => $ports]);
     }
 }
