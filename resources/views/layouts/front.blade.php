@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-  <head>
+    <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>@yield('title')</title>
+            <title>@yield('title')</title>
 
         <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -21,7 +20,7 @@
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'BiMMy') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -41,4 +40,7 @@
             </main>
         </div>
     </body>
+    <footer id="footer" class="bg-light flex-column justify-content-center">
+        <p>© 2019 DAICHI HOSHINA All Rights Reserved.</p>
+    </footer>
 </html>

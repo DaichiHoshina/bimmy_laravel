@@ -1,15 +1,28 @@
 body {
   color: #000;
+  background-color: #fafafa;
+}
+
+footer {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
 }
 
 .top-wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  color: #FFFFFF;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/images/backgroung.jpeg");
+  background-image: url("/images/background.jpeg");
+}
+
+.top-message {
+  margin-top: 100px;
 }
 
 .header .logo {

@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.app')
 @section('content')
     <div class="container">
       <hr color="#c0c0c0">
