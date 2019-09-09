@@ -6,7 +6,7 @@
             <div class="col-md-offset-1 col-md-10">
                 <div class="top-message text-center">
                     <h4>全国の「おいしいもの」を投稿するサイトです<br><br>
-                        みんなで「おいしいもの」を共有しましょう
+                        みんなで「BiMMy!(美味ぃ!)」を共有しましょう
                     </h4>
                 </div>
             </div>
