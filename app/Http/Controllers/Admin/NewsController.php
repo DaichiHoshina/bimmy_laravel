@@ -1,10 +1,10 @@
 <?php
 
-namespace app\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use app\Http\Controllers\Controller;
-use app\News;
+use App\Http\Controllers\Controller;
+use App\News;
 
 class NewsController extends Controller
 {
@@ -30,7 +30,7 @@ class NewsController extends Controller
       $news->fill($form);
       $news->save();
 
-      return redirect('admin/news');
+      return redirect('/news');
   }
 
   public function index(Request $request)

@@ -23,16 +23,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-Route::get('users/show', 'UserController@show');
+Route::resource('users', 'UserController');
 
 Route::get('/', 'HomeController@index');
 Route::get('news/index', 'NewsController@index');
 Route::get('news/create', 'NewsController@add');
 Route::post('news/create', 'NewsController@create')->middleware('auth');
 Route::get('news/delete', 'NewsController@delete')->middleware('auth');
-
-Route::get('profile', 'ProfileController@index')->middleware('auth');
-Route::get('profile/create', 'ProfileController@add')->middleware('auth');
-Route::post('profile/create', 'ProfileController@create');
-Route::post('profile/edit', 'ProfileController@update');
-Route::get('profile/edit', 'ProfileController@edit')->middleware('auth');

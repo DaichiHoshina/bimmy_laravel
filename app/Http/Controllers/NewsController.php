@@ -1,10 +1,12 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\HTML;
-use app\News;
+use Illuminate\Support\Facades\Auth;
+use App\News;
+use App\User;
 
 class NewsController extends Controller
 {
@@ -17,12 +19,16 @@ class NewsController extends Controller
     {
         $posts = News::all()->sortByDesc('updated_at');
         return view('news.index', ['posts' => $posts]);
+
+
     }
 
     public function create(Request $request)
     {
         $this->validate($request, News::$rules);
         $news = new News;
+        $user = User::find(Auth::id());
+        $news->user_id = $user->id;
         $form = $request->all();
 
         if ($form['image']) {
@@ -36,6 +42,6 @@ class NewsController extends Controller
         $news->fill($form);
         $news->save();
 
-        return redirect('admin/news');
+        return redirect('news/index');
     }
 }

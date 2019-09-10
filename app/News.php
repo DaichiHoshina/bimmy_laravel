@@ -1,6 +1,6 @@
 <?php
 
-namespace app;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,4 +12,9 @@ class News extends Model
         'title' => 'required',
         'body'  => 'required',
     );
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

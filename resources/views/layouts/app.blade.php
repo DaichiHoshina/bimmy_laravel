@@ -54,7 +54,7 @@
                             @endif
                             @else
                             <li>
-                                <a href="{{ url('plofile/show') }}" class="nav-link">
+                                <a href="{{ url('users/' . Auth::id()) }}" class="nav-link">
                                   プロフィール
                                 </a>
                             </li>
