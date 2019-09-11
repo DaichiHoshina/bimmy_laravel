@@ -13,7 +13,7 @@
                                   </div>
                                   <div class="body">
                                       <a href="{{ url('users/' . $post->user->id) }}" class="nav-link">
-                                          {{ $post->user->name }}
+                                          @ {{ $post->user->name }}
                                       </a>
                                   </div>
                                   <div class="title">
@@ -26,7 +26,7 @@
                               <div class="image col-md-6 text-right mt-4">
                                   @if ($post->image_path)
                                   <img src="{{ asset('storage/image/' . $post->image_path) }}">
-                                    @endif
+                                  @endif
                               </div>
                           </div>
                       </div>

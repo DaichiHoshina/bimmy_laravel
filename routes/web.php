@@ -23,7 +23,11 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
+Route::post('favorite/create', 'FavoriteController@create')->middleware('auth');
+Route::post('favorite/delete', 'FavoriteController@delete')->middleware('auth');
+
 Route::resource('users', 'UserController');
+Route::post('users/edit', 'UserController@update');
 
 Route::get('/', 'HomeController@index');
 Route::get('news/index', 'NewsController@index');

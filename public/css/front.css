@@ -20,6 +20,9 @@ ul {
   background-repeat: no-repeat;
   background-image: url("/images/background.jpeg");
 }
+.top-wrapper .login {
+  margin: 20px;
+}
 
 .top-message {
   margin-top: 100px;
@@ -50,6 +53,16 @@ ul {
 }
 .headline .caption .body {
   font-size: 0.8em;
+}
+
+.profile-box .profile-image {
+  margin-bottom: 20px;
+}
+.profile-box .profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  box-shadow: 0 2px 6px #c1ced7;
 }
 
 .posts .post .date {
