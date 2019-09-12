@@ -14,8 +14,20 @@ class CreateFavoritesTable extends Migration
     public function up()
     {
         Schema::create('favorites', function (Blueprint $table) {
+            $table->integer('user_id')->nullable();
+            $table->integer('news_id')->nullable();
             $table->bigIncrements('id');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade'); // userが削除されたとき、それに関連するfavoriteも一気に削除される
+
+            $table->foreign('news_id')
+                  ->references('id')
+                  ->on('news')
+                  ->onDelete('cascade'); // postが削除されたとき、それに関連するfavoriteも一気に削除される
         });
     }
 

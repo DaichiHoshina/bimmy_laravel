@@ -65,17 +65,24 @@ ul {
   box-shadow: 0 2px 6px #c1ced7;
 }
 
-.posts .post .date {
+.posts {
+  padding: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #e6ecf0;
+  border-radius: 3px;
+}
+.posts .date {
   font-size: 0.6em;
   color: #999999;
 }
-.posts .post .title {
+.posts .title {
   font-size: 1.2em;
   font-weight: bold;
 }
-.posts .post .body {
-  font-size: 0.8em;
+.posts .body {
+  font-size: 1em;
 }
-.posts .post .image img {
-  width: 250px;
+.posts .image img {
+  margin-top: 10px;
+  width: 100%;
 }

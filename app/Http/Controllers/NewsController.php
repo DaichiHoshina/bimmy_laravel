@@ -18,9 +18,8 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         $posts = News::all()->sortByDesc('updated_at');
+        //$post_count = News::withCount('favorite')->get();
         return view('news.index', ['posts' => $posts]);
-
-
     }
 
     public function create(Request $request)

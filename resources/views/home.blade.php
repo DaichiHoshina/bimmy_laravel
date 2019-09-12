@@ -13,13 +13,13 @@
                         <a class="btn btn-success" href="{{ route('register') }}">{{ __('新規登録') }}</a>
                     </div>
                     @if(!Auth::check())
-    <form action="{{ route('login') }}" method="POST" class="mt-3">
-        @csrf
-        <input type="hidden" name="email" value="test@test.jp">
-        <input type="hidden" name="password" value="testtesttest">
-        <button type="submit" class="btn btn-warning">テストユーザーでログイン</button>
-    </form>
-@endif
+                        <form action="{{ route('login') }}" method="POST" class="mt-3">
+                        @csrf
+                        <input type="hidden" name="email" value="test@test.jp">
+                        <input type="hidden" name="password" value="testtesttest">
+                        <button type="submit" class="btn btn-warning">テストユーザーでログイン</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

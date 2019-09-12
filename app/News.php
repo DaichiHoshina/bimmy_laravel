@@ -17,4 +17,9 @@ class News extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function favorite()
+    {
+        return $this->belongsTo('App\Favorite');
+    }
 }

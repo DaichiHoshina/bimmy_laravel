@@ -9,15 +9,6 @@ use App\News;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        if (Auth::id() === 1) {
-        $users = User::all();
-        return view('users.index', ['users' => $users]);
-        }
-        return redirect('/')->with('alert_msg', '不正アクセスです');
-    }
-
     public function show(Request $request,$id)
     {
         $user = User::find($id);
@@ -27,6 +18,7 @@ class UserController extends Controller
     public function edit(Request $request,$id)
     {
         $user = User::find($id);
+        \Debugbar::addMessage($user);
         return view('users.edit', ['user_form' => $user]);
     }
 
@@ -44,9 +36,10 @@ class UserController extends Controller
           unset($user_form['remove']);
         }
         unset($user_form['_token']);
-        \Debugbar::addMessage($user);
-        $user->fill($user_form)->save();
+        //dd($user_form);
+        $user->fill($user_form);
 
+        $user->save();
 
         return redirect('users/' . $user->id);
     }

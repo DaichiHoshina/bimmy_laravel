@@ -74,7 +74,10 @@ ul {
 }
 
 .posts {
-  .post {
+    padding: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
     .date {
       font-size: 0.6em;
       color: #999999;
@@ -84,12 +87,12 @@ ul {
       font-weight: bold;
     }
     .body {
-      font-size: 0.8em;
+      font-size: 1.0em;
     }
     .image {
       img {
-    width: 250px;
+        margin-top: 10px;
+        width: 100%;
       }
     }
   }
-}
