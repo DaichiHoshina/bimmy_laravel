@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\HTML;
 use Illuminate\Support\Facades\Auth;
 use App\News;
 use App\User;
+use App\Favorite;
+use Storage;
 
 class NewsController extends Controller
 {
@@ -18,7 +20,6 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         $posts = News::all()->sortByDesc('updated_at');
-        //$post_count = News::withCount('favorite')->get();
         return view('news.index', ['posts' => $posts]);
     }
 
@@ -31,8 +32,8 @@ class NewsController extends Controller
         $form = $request->all();
 
         if ($form['image']) {
-          $path = $request->file('image')->store('public/image');
-          $news->image_path = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+          $news->image_path = Storage::disk('s3')->url($path);
         } else {
           $news->image_path = null;
         }

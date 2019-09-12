@@ -18,8 +18,13 @@ class News extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function favorite()
+    public function favorites()
     {
-        return $this->belongsTo('App\Favorite');
+        return $this->hasMany('App\Favorite');
+    }
+
+    public function favorite_news()
+    {
+        return $this->hasManyThrough('App\User', 'App\Favorite');
     }
 }

@@ -24,15 +24,27 @@
                     </div>
                     <div class="image">
                         @if ($post->image_path)
-                        <img src="{{ asset('storage/image/' . $post->image_path) }}">
+                         <img src="{{ $post->image_path }}">
                         @endif
                     </div>
-                    <div class="heart">
-                        <form action="{{ url('favorite/create') }}" method="post" class="mt-3">
-                        <button type="submit" class="fa fa-heart like-btn"></button>
-                        {{ csrf_field() }}
-                        </form>
-                    </div>
+                    @if(Auth::check())
+                        @if ($post->favorites->isEmpty())
+                        <div class="heart">
+                            <form action="{{ url('favorite/' . $post->id . '/create') }}" method="post" class="mt-3">
+                            <button type="submit" class="fa fa-heart like-btn">{{ $post->favorites->count() }}</button>
+                            {{ csrf_field() }}
+                            </form>
+                        </div>
+                        @else
+                        <div class="heart">
+                            <form action="{{ url('favorite/' . $post->id . '/delete') }}" method="post" class="mt-3">
+                            <button type="submit" class="fa fa-heart unlike-btn">{{ $post->favorites->count() }}</button>
+                            {{ csrf_field() }}
+                            </form>
+                        </div>
+                        <h5></h5>
+                        @endif
+                    @endif
               </div>
           </div>
       </div>

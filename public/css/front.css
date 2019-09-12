@@ -65,6 +65,13 @@ ul {
   box-shadow: 0 2px 6px #c1ced7;
 }
 
+.heart .like-btn {
+  color: #8899a6;
+}
+.heart .unlike-btn {
+  color: #ff2581;
+}
+
 .posts {
   padding: 30px;
   background-color: #FFFFFF;

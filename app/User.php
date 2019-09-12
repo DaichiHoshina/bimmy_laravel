@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function news()
+    public function posts()
     {
         return $this->hasMany('App\News');
     }
@@ -45,6 +45,11 @@ class User extends Authenticatable
     public function favorite()
     {
         return $this->hasMany('App\Favorite');
+    }
+
+    public function favorites_news()
+    {
+        return $this->hasManyThrough('App\News', 'App\Favorite');
     }
 
 }

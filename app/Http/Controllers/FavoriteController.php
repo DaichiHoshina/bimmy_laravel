@@ -10,14 +10,23 @@ use App\User;
 
 class FavoriteController extends Controller
 {
-    public function create(Request $request)
+    public function create(Request $request,$id)
     {
         $favorite = new Favorite;
         $favorite->user_id = Auth::id();
-        $favorite->news_id = 2;
-        //dd($favorite);
+        $favorite->news_id = $id;
+        unset($favorite['_token']);
         $favorite->save();
 
-        return view('news.index');
+        return redirect('news/index');
+    }
+
+    public function delete(Request $request,$id)
+    {
+        $favorite = Favorite::where('news_id',$id )->where('user_id', Auth::id() );
+        $favorite->delete();
+        // dd($favorite);
+
+        return redirect('news/index');
     }
 }

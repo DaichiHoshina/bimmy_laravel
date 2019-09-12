@@ -10,9 +10,9 @@ class Favorite extends Model
     {
         return $this->belongsTo('App\News');
     }
+
     public function user()
     {
         return $this->belongsTo('App\User');
     }
-
 }
