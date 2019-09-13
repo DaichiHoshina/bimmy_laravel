@@ -2,7 +2,7 @@
 
 BiMMyは、日本各地の「おいしいもの」を投稿して共有するためのサイトです。
 
-![alt]https://gyazo.com/b9f6b51f8410c1b4f8cf7d8de2f54451
+![b9f6b51f8410c1b4f8cf7d8de2f54451](https://user-images.githubusercontent.com/50498102/64840090-ddd6dc00-d634-11e9-958e-99e79d25769e.jpg)
 
 
 ## サイトURL
