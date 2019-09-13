@@ -34,11 +34,6 @@
                                   投稿一覧
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ url('news/create') }}" class="nav-link">
-                                  投稿作成
-                                </a>
-                            </li>
                             @guest
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
@@ -49,6 +44,16 @@
                                     </li>
                                 @endif
                                 @else
+                                <li>
+                                    <a href="{{ url('news/create') }}" class="nav-link">
+                                      投稿作成
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('favorite/' . Auth::id() . '/index') }}" class="nav-link">
+                                      いいね投稿一覧
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="{{ url('users/' . Auth::id()) }}" class="nav-link">
                                       プロフィール

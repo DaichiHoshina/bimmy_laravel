@@ -7,9 +7,21 @@ use Illuminate\Support\Facades\Auth;
 use App\News;
 use App\Favorite;
 use App\User;
+use Storage;
 
 class FavoriteController extends Controller
 {
+    public function index(Request $request, $id)
+    {
+        $posts = News::all();
+        //$favorites = $posts->favortes;
+        //dd($posts);
+        //$user = User::find($id);
+        //$favorites = $user->favorites_news;
+
+        return view('favorite.index',['posts' => $posts]);
+    }
+
     public function create(Request $request, $id)
     {
         $favorite = new Favorite;

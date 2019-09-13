@@ -13,8 +13,7 @@
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
-    Route::post('news/create', 'Admin\NewsController@create')
-    ->middleware('auth');
+    Route::post('news/create', 'Admin\NewsController@create')->middleware('auth');
     Route::get('news', 'Admin\NewsController@index')->middleware('auth');
     Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth');
     Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth');
@@ -25,9 +24,10 @@ Auth::routes();
 
 Route::post('favorite/{id}/create', 'FavoriteController@create')->middleware('auth');
 Route::post('favorite/{id}/delete', 'FavoriteController@delete')->middleware('auth');
+Route::get('favorite/{id}/index', 'FavoriteController@index')->middleware('auth');
 
 Route::resource('users', 'UserController');
-Route::post('users/edit', 'UserController@update');
+Route::post('users/edit', 'UserController@update')->middleware('auth');;
 
 Route::get('/', 'HomeController@index');
 Route::get('news/index', 'NewsController@index');

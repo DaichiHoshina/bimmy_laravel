@@ -42,7 +42,7 @@ class User extends Authenticatable
         return $this->hasMany('App\News');
     }
 
-    public function favorite()
+    public function favorites()
     {
         return $this->hasMany('App\Favorite');
     }
