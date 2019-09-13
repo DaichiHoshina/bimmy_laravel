@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container py-4">
+        <h3>いいね投稿一覧</h3>
         @foreach($posts as $post)
         <div class="posts colmd-offset-4 col-md-5 mx-auto mt-3">
             <div class="row">

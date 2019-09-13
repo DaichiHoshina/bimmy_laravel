@@ -13,12 +13,11 @@ class FavoriteController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $posts = News::all();
-        //$favorites = $posts->favortes;
-        //dd($posts);
-        //$user = User::find($id);
-        //$favorites = $user->favorites_news;
-
+        $favorites = Auth::user()->favorites;
+        $posts = [];
+        foreach($favorites as $f){
+          $posts[] = $f->news;
+        }
         return view('favorite.index',['posts' => $posts]);
     }
 
