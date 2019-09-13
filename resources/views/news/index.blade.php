@@ -2,18 +2,22 @@
 @section('content')
     <div class="container">
         @foreach($posts as $post)
-        <div class="posts colmd-offset-4 col-md-5 mx-auto mt-3">
+        <div class="posts colmd-offset-4 col-md-5 mx-auto mt-4">
             <div class="row">
                 <div class="post">
                     <div class="text">
-                        <div class="date">
-                            ID: {{ $post->id }}
-                            {{ $post->updated_at->format('Y年m月d日') }}
+                        <div class="user-image mb-2">
+                            @if ($post->user->image_path)
+                             <img src="{{ $post->user->image_path }}">
+                            @endif
+                            <div class="body">
+                                <a href="{{ url('users/' . $post->user->id) }}" class="nav-link">
+                                  @ {{ $post->user->name }}
+                                </a>
+                            </div>
                         </div>
-                        <div class="body">
-                            <a href="{{ url('users/' . $post->user->id) }}" class="nav-link">
-                              @ {{ $post->user->name }}
-                            </a>
+                        <div class="date mb-2">
+                            {{ $post->updated_at->format('Y年m月d日') }}
                         </div>
                         <div class="title">
                             {{ str_limit($post->title, 150) }}

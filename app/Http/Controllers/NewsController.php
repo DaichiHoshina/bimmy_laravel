@@ -20,7 +20,8 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         $posts = News::all()->sortByDesc('updated_at');
-        return view('news.index', ['posts' => $posts]);
+        $users = User::all();
+        return view('news.index', ['posts' => $posts],['users' => $users]);
     }
 
     public function create(Request $request)

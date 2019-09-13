@@ -55,6 +55,16 @@ ul {
   font-size: 0.8em;
 }
 
+.user-image {
+  display: flex;
+}
+.user-image img {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
 .profile-box .profile-image {
   margin-bottom: 20px;
 }
@@ -62,7 +72,6 @@ ul {
   width: 200px;
   height: 200px;
   border-radius: 10%;
-  box-shadow: 0 2px 6px #c1ced7;
 }
 
 .heart .like-btn {
