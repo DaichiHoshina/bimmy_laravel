@@ -5,10 +5,10 @@ BiMMyは、日本各地の「おいしいもの」を投稿して共有するた
 ![alt]https://gyazo.com/b9f6b51f8410c1b4f8cf7d8de2f54451
 
 
-##サイトURL
+## サイトURL
 https://hidden-hamlet-51542.herokuapp.com
 
-##主な機能
+## 主な機能
 
 1.ユーザー登録機能
 2.ユーザーログイン機能
