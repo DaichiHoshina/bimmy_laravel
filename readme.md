@@ -1,7 +1,8 @@
 # BiMMy
 
 BiMMyは、日本各地の「おいしいもの」を投稿して共有するためのサイトです。
-![TOP画面]https://gyazo.com/b9f6b51f8410c1b4f8cf7d8de2f54451
+![alt]https://gyazo.com/b9f6b51f8410c1b4f8cf7d8de2f54451
+
 
 ##サイトURL
 https://hidden-hamlet-51542.herokuapp.com
