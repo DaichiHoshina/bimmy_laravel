@@ -30,8 +30,7 @@ class NewsController extends Controller
         $user = User::find(Auth::id());
         $news->user_id = $user->id;
         $form = $request->all();
-
-        if ($form['image']) {
+        if (isset($form['image'])) {
             $path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
             $news->image_path = Storage::disk('s3')->url($path);
         } else {
