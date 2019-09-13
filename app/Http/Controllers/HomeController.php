@@ -13,7 +13,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
     }
 
     /**
@@ -23,7 +22,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         return view('home');
     }
 }

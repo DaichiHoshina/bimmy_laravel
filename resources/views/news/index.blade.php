@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-      @foreach($posts as $post)
+        @foreach($posts as $post)
         <div class="posts colmd-offset-4 col-md-5 mx-auto mt-3">
             <div class="row">
                 <div class="post">
@@ -28,7 +28,7 @@
                         @endif
                     </div>
                     @if(Auth::check())
-                        @if ($post->favorites->isEmpty())
+                        @if ($post->favorites->isEmpty() )
                         <div class="heart">
                             <form action="{{ url('favorite/' . $post->id . '/create') }}" method="post" class="mt-3">
                             <button type="submit" class="fa fa-heart like-btn">{{ $post->favorites->count() }}</button>

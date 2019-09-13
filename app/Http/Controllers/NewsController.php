@@ -32,10 +32,10 @@ class NewsController extends Controller
         $form = $request->all();
 
         if ($form['image']) {
-          $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
-          $news->image_path = Storage::disk('s3')->url($path);
+            $path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
+            $news->image_path = Storage::disk('s3')->url($path);
         } else {
-          $news->image_path = null;
+            $news->image_path = null;
         }
         unset($form['_token']);
         unset($form['image']);
