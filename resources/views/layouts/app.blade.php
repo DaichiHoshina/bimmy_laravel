@@ -8,10 +8,6 @@
         <title>{{ config('app.name', 'app') }}</title>
 
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
-        </script>
 
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -82,29 +78,11 @@
                         </ul>
                     </div>
                 </div>
-                {{--フラッシュメッセージ--}}
-                               @if(session('success_msg'))
-                                   <div class="container mt-2 flash-msg">
-                                       <div class="alert alert-success">
-                                           {{ session('success_msg') }}
-                                       </div>
-                                   </div>
-                               @elseif(session('alert_msg'))
-                                   <div class="container mt-2 flash-msg">
-                                       <div class="alert alert-danger">
-                                           {{ session('alert_msg') }}
-                                       </div>
-                                   </div>
-                               @endif
             </nav>
             <main>
                 @yield('content')
             </main>
         </div>
-
-        <main @if(!Request::is('/')) class="py-4"@endif>
-            @yield('content')
-        </main>
     </body>
     <footer id="footer" class="bg-light flex-column justify-content-center py-4">
         <p>© 2019 DAICHI HOSHINA All Rights Reserved.</p>
