@@ -49218,14 +49218,6 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
-$(function () {
-  //フラッシュメッセージ
-  function flashMsg() {
-    $('.flash-msg').fadeOut(3000);
-  }
-
-  setTimeout(flashMsg, 3000);
-});
 
 /***/ }),
 
