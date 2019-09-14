@@ -22,7 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with('success_msg','メッセージを投稿しました');
+        return view('home');
 
     }
 }
