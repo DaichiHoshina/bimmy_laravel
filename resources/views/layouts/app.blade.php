@@ -79,6 +79,9 @@
                     </div>
                 </div>
             </nav>
+            <main>
+                @yield('content')
+            </main>
         </div>
     </body>
     <footer id="footer" class="bg-light flex-column justify-content-center py-4">
