@@ -34,6 +34,11 @@
                                   投稿一覧
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ url('users') }}" class="nav-link">
+                                  登録者一覧
+                                </a>
+                            </li>
                             @guest
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>

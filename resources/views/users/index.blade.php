@@ -1,12 +1,20 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <h2>プロフィール</h2>
+    <div class="container py-4">
+        <h2>登録者一覧</h2>
           @foreach($users as $user)
-            <div class="profile-box">
+            <div class="profile-box pt-3">
                 <div class="profile-list row">
-                    <p class="col-md-2">名前:</p>
-                    <p class="col-md-10">{{ $user->name }}</p>
+                    <div class="user-image mb-2">
+                        @if ($user->image_path)
+                            <img src="{{ $user->image_path }}">
+                        @endif
+                    </div>
+                    <div class="body">
+                        <a href="{{ url('users/' . $user->id) }}" class="nav-link">
+                            @ {{ $user->name }}
+                        </a>
+                    </div>
                 </div>
             </div>
           @endforeach
