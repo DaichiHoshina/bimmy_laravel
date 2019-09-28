@@ -7,14 +7,16 @@
             <div class="row">
                 <div class="post">
                     <div class="text">
-                        <div class="date">
-                            ID: {{ $post->id }}
-                            {{ $post->updated_at->format('Y年m月d日') }}
-                        </div>
-                        <div class="body">
+                        <div class="body user-image">
+                            @if ($post->user->image_path)
+                                <img src="{{ $post->user->image_path }}">
+                            @endif
                             <a href="{{ url('users/' . $post->user->id) }}" class="nav-link">
-                              @ {{ $post->user->name }}
+                                @ {{ $post->user->name }}
                             </a>
+                        </div>
+                        <div class="date">
+                            {{ $post->updated_at->format('Y年m月d日') }}
                         </div>
                         <div class="title">
                             {{ str_limit($post->title, 150) }}

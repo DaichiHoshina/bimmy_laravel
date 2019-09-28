@@ -11,7 +11,7 @@ class News extends Model
     public static $rules = array(
         'title' => 'required|max:30',
         'body'  => 'required|max:200',
-        'image_path' => 'required',
+        'image' => 'required',
     );
 
     public function user()

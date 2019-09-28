@@ -8,7 +8,7 @@
                     <div class="text">
                         <div class="user-image mb-2">
                             @if ($post->user->image_path)
-                             <img src="{{ $post->user->image_path }}">
+                                <img src="{{ $post->user->image_path }}">
                             @endif
                             <div class="body">
                                 <a href="{{ url('users/' . $post->user->id) }}" class="nav-link">
@@ -28,21 +28,23 @@
                     </div>
                     <div class="image">
                         @if ($post->image_path)
-                         <img src="{{ $post->image_path }}">
+                            <img src="{{ $post->image_path }}">
                         @endif
                     </div>
                     @if(Auth::check())
                         @if (!$post->favorites->pluck("user_id")->contains(Auth::user()->id) )
                         <div class="heart">
                             <form action="{{ url('favorite/' . $post->id . '/create') }}" method="post" class="mt-3">
-                            <button type="submit" class="fa fa-heart like-btn">{{ $post->favorites->count() }}</button>
+                            <button type="submit" class="fa fa-heart like-btn">
+                              {{ $post->favorites->count() }}</button>
                             {{ csrf_field() }}
                             </form>
                         </div>
                         @else
                         <div class="heart">
                             <form action="{{ url('favorite/' . $post->id . '/delete') }}" method="post" class="mt-3">
-                            <button type="submit" class="fa fa-heart unlike-btn">{{ $post->favorites->count() }}</button>
+                            <button type="submit" class="fa fa-heart unlike-btn">
+                              {{ $post->favorites->count() }}</button>
                             {{ csrf_field() }}
                             </form>
                         </div>
