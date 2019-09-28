@@ -31,12 +31,14 @@
                             <img src="{{ $post->image_path }}">
                         @endif
                     </div>
+
+                    <!-- いいね機能 -->
                     @if(Auth::check())
                         @if (!$post->favorites->pluck("user_id")->contains(Auth::user()->id) )
                         <div class="heart">
                             <form action="{{ url('favorite/' . $post->id . '/create') }}" method="post" class="mt-3">
                             <button type="submit" class="fa fa-heart like-btn">
-                              {{ $post->favorites->count() }}</button>
+                            {{ $post->favorites->count() }}</button>
                             {{ csrf_field() }}
                             </form>
                         </div>
@@ -44,13 +46,13 @@
                         <div class="heart">
                             <form action="{{ url('favorite/' . $post->id . '/delete') }}" method="post" class="mt-3">
                             <button type="submit" class="fa fa-heart unlike-btn">
-                              {{ $post->favorites->count() }}</button>
+                            {{ $post->favorites->count() }}</button>
                             {{ csrf_field() }}
                             </form>
                         </div>
-                        <h5></h5>
                         @endif
                     @endif
+
               </div>
           </div>
       </div>

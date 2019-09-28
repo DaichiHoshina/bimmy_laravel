@@ -11,6 +11,7 @@
 |
 */
 
+// 管理者用
 Route::group(['prefix' => 'admin'], function () {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
     Route::post('news/create', 'Admin\NewsController@create')->middleware('auth');
@@ -22,13 +23,16 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
+// いいね機能
 Route::post('favorite/{id}/create', 'FavoriteController@create')->middleware('auth');
 Route::post('favorite/{id}/delete', 'FavoriteController@delete')->middleware('auth');
 Route::get('favorite/{id}/index', 'FavoriteController@index')->middleware('auth');
 
+// ユーザー登録機能
 Route::resource('users', 'UserController');
 Route::post('users/edit', 'UserController@update')->middleware('auth');;
 
+//ニュース投稿機能
 Route::get('/', 'HomeController@index');
 Route::get('news/index', 'NewsController@index');
 Route::get('news/create', 'NewsController@add');
