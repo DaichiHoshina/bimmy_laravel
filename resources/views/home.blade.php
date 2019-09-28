@@ -19,7 +19,7 @@
                         <form action="{{ route('login') }}" method="POST" class="mt-3">
                         @csrf
                         <input type="hidden" name="email" value="test@test.jp">
-                        <input type="hidden" name="password" value="testtesttest">
+                        <input type="hidden" name="password" value="test@test.jp">
                         <button type="submit" class="btn btn-warning">テストユーザーでログイン</button>
                         </form>
                     </div>
