@@ -47,8 +47,4 @@ class User extends Authenticatable
         return $this->hasMany('App\Favorite');
     }
 
-    public function favorites_news()
-    {
-        return $this->hasManyThrough('App\News', 'App\Favorite');
-    }
 }

@@ -24,8 +24,4 @@ class News extends Model
         return $this->hasMany('App\Favorite');
     }
 
-    public function favorite_users()
-    {
-        return $this->hasManyThrough('App\User', 'App\Favorite');
-    }
 }

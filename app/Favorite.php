@@ -18,8 +18,4 @@ class Favorite extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function favorite_news()
-    {
-        return $this->belongsTo('App\User', 'App\Favorite');
-    }
 }
